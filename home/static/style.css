@@ -1,0 +1,121 @@
+/* === Основные переменные === */
+:root {
+    --bg: #0f172a;          /* фон страницы */
+    --text: #f1f5f9;        /* цвет текста */
+    --accent: #5819D9;      /* фиолетовый акцент */
+    --accent-light: #7c2cf7;
+    --input-bg: #1e293b;    /* фон input */
+    --input-border: #5819D9;
+    --button-bg: #5819D9;
+    --button-hover: #7c2cf7;
+}
+
+/* === Body и заголовки === */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 12px;
+    padding: 20px;
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+h1, h2, h3 {
+    color: var(--accent);
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+/* === Таблицы === */
+table {
+    max-width: 500px;
+    width: 100%;
+    margin: 10px auto;
+    border-collapse: collapse;
+    font-size: 12px;
+    background-color: #1e293b;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+th, td {
+    border: 1px solid #333;
+    padding: 5px;
+    word-break: break-word;
+    white-space: nowrap;
+}
+
+td {text-align: left;}
+
+
+tr:nth-child(even) {
+    background-color: #16202f;
+}
+
+tr:hover {
+    background-color: #292f4d;
+}
+
+/* === Input, Select, Textarea === */
+input.input,
+select.input,
+textarea.input {
+    background-color: var(--input-bg);
+    color: var(--text);
+    border: 1px solid var(--input-border);
+    border-radius: 5px;
+    padding: 5px 5px;
+    width: 100%;
+    font-size: 12px;
+    box-sizing: border-box;
+}
+
+input.input::placeholder,
+textarea.input::placeholder {
+    color: #cbd5e1;
+}
+
+/* === Кнопки === */
+button,
+input[type="submit"] {
+    background-color: var(--button-bg);
+    color: white;
+    border: none;
+    padding: 5px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: background 0.2s;
+}
+
+button:hover,
+input[type="submit"]:hover {
+    background-color: var(--button-hover);
+}
+
+/* === Форма контейнер === */
+.form-container {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+/* === Сообщения об ошибках === */
+.errors {
+    color: #ff6b6b;
+    font-size: 11px;
+    margin: 2px 0 5px 0;
+    list-style: none;
+    padding-left: 0;
+}
+
+/* === Ссылки === */
+a {
+    color: var(--accent);       /* основной цвет ссылки, можно заменить на любой */
+    text-decoration: none;       /* убираем подчеркивание */
+    transition: color 0.2s, transform 0.2s; /* плавный переход при hover */
+}
+

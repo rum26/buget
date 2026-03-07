@@ -9,20 +9,30 @@
     <meta name="apple-mobile-web-app-title" content="esb" />
     <link rel="manifest" href="{% static 'icons/site.webmanifest' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
-
-<title>Вход</title>
-
+<title>{{ request.user.username }}</title>
 </head>
 <body>
 
-<h1>Вход</h1>
+<h1><a href="{% url 'home' %}">⇐</a> ПРОФИЛЬ</h1>
 
 <form method="post">
     {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Войти</button>
+
+    <table>
+        <tr>
+            <td>{{ form.phone.label_tag }}</td>
+            <td>{{ form.phone }}</td>
+        </tr>
+        <tr>
+            <td>{{ form.birth_date.label_tag }}</td>
+            <td>{{ form.birth_date }}</td>
+        </tr>
+        <tr>
+            <td>{{ form.google_table_id.label_tag }}</td>
+            <td>{{ form.google_table_id }}</td>
+        </tr>
+    </table>
+
+    <button type="submit">Сохранить</button>
 </form>
-
-<p><a href="{% url 'register' %}">Зарегистрироваться</a></p>
-
 </body>

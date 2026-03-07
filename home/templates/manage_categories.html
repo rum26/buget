@@ -1,3 +1,4 @@
+
 {% load static %}
 <head>
     <meta charset="UTF-8">
@@ -14,33 +15,36 @@
 
 </head>
 <body>
+<h1><a href="{% url 'home' %}">⇐</a> МОИ КАТЕГОРИИ</h1>
 
-<h1>
-    <a href="{% url 'edit_profile' %}">ПРОФИЛЬ</a>
-    <a href="{% url 'manage_categories' %}">КАТЕГОРИИ</a>
-</h1>
-
+<!-- Форма для добавления новой категории -->
 <form method="post">
     {% csrf_token %}
     <table>
         <tr>
-            <td>{{ form.amount }}</td>
-            <td>{{ form.category }}</td>
-            <td>{{ form.title }}</td>
-            <td><button type="submit">Добавить</button></td>
+            <th>{{ form.name }}</th>
+            <th><button type="submit" name="add_category">Добавить категорию</button></th>
         </tr>
-           <tr>
-    </tr>
-        {% for expense in expenses %}
-    <tr>
-        <td>{{ expense.amount }}</td>
-        <td>{{ expense.category }}</td>
-        <td>{{ expense.title }}</td>
-        <td>{{ expense.date|date:"d.m.y H:i " }}</td>
-    </tr>
-        {% empty %}
-    <tr>Расходов пока нет</tr>
-        {% endfor %}
     </table>
 </form>
+
+<hr>
+
+<table>
+    {% for category in categories %}
+        <tr>
+            <td>{{ category.name }}</td>
+            <th>
+                <form method="post" style="display:inline">
+                {% csrf_token %}
+                    <button type="submit" name="delete_category" value="{{ category.id }}">Удалить</button>
+                </form>
+            </th>
+        </tr>
+    {% empty %}
+        <tr>Категорий пока нет</tr>
+    {% endfor %}
+</table>
+
+
 </body>
