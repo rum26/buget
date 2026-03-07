@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404
+from django.utils import timezone
 from .forms import RegisterForm
 from django.contrib.auth import login
 from django.contrib.auth.forms import AuthenticationForm
@@ -33,6 +34,8 @@ def login_view(request):
         if form.is_valid():
             print('Вход OK!')
             user = form.get_user()
+            user.last_login = timezone.now()
+            user.save()
             login(request, user)
             return redirect("home")
         else:
@@ -74,7 +77,9 @@ def edit_profile(request):
     else:
         form = ProfileForm(instance=profile)
 
-    return render(request, 'edit_profile.html', {'form': form})
+    return render(request,
+                  'edit_profile.html', {'form': form,
+                                        'user': request.user})
 
 
 def manage_categories(request):

@@ -20,6 +20,18 @@
 
     <table>
         <tr>
+            <td>Последний вход</td>
+            <td>{{user.last_login|date:"d.m.y H:i " }}</td>
+        </tr>
+        <tr>
+            <td>ID</td>
+            <td>{{user.id}}</td>
+        </tr>
+        <tr>
+            <td>Имя</td>
+            <td>{{user.username}}</td>
+        </tr>
+        <tr>
             <td>{{ form.phone.label_tag }}</td>
             <td>{{ form.phone }}</td>
         </tr>
@@ -34,5 +46,12 @@
     </table>
 
     <button type="submit">Сохранить</button>
+
 </form>
+
+<form method="post" action="{% url 'logout' %}">
+    {% csrf_token %}
+    <button type="submit">Выйти</button>
+</form>
+
 </body>
