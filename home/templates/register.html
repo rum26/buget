@@ -1,0 +1,62 @@
+
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="{% static 'icons/favicon-96x96.png' %}" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="{% static 'icons/' %}" />
+    <link rel="shortcut icon" href="{% static 'icons/favicon.svg' %}" />
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'icons/apple-touch-icon.png' %}" />
+    <meta name="apple-mobile-web-app-title" content="esb" />
+    <link rel="manifest" href="{% static 'icons/site.webmanifest' %}">
+
+<title>Регистрация</title>
+
+<style>
+:root {
+    --bg: #0f172a;
+    --card: #1e293b;
+    --accent: #3b82f6;
+    --text: #f1f5f9;
+    --muted: #94a3b8;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 10px;
+    padding: 20px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+h1 {
+    color: #5819D9;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 400;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<h1 class="frm">Регистрация</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.errors }}
+    <div>{{ form.username }} <label>Имя пользователя</label></div>
+    <div>{{ form.password1 }} <label>Пароль</label></div>
+    <div>{{ form.password2 }}  <label>Повторите пароль</label></div>
+    <div><button type="submit">Создать аккаунт</button></div>
+</form>
+</body>
