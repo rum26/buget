@@ -18,4 +18,5 @@ python manage.py migrate
 - v1.11 - Timezone, last login
 - v1.12 - logout
 - v1.13 - table-layout: fixed
+- v1.14 - PostgreSQL
 ---

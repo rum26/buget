@@ -22,12 +22,6 @@ body {
     text-align: center;
 }
 
-h1, h2, h3 {
-    color: var(--accent);
-    font-weight: 400;
-    margin-bottom: 20px;
-}
-
 /* === Таблицы === */
 table {
     table-layout: fixed;
@@ -47,6 +41,8 @@ th, td {
     padding: 5px;
     word-break: break-word;
     white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 td {text-align: left;}
@@ -84,7 +80,7 @@ input[type="submit"] {
     background-color: var(--button-bg);
     color: white;
     border: none;
-    padding: 5px 15px;
+    padding: 5px;
     border-radius: 5px;
     cursor: pointer;
     font-size: 12px;
@@ -115,7 +111,7 @@ input[type="submit"]:hover {
 
 /* === Ссылки === */
 a {
-    color: var(--accent);       /* основной цвет ссылки, можно заменить на любой */
-    text-decoration: none;       /* убираем подчеркивание */
-    transition: color 0.2s, transform 0.2s; /* плавный переход при hover */
+    color: var(--accent);
+    text-decoration: none;
+    transition: color 0.2s, transform 0.2s;
 }

@@ -19,10 +19,26 @@
 
 <form method="post">
     {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Войти</button>
+
+    <table>
+        <tr>
+            <th>{{ form.username }}</th>
+            <th>Логин</th>
+        </tr>
+        <tr>
+            <th>{{ form.password }}</th>
+            <th>Пароль</th>
+        </tr>
+        <tr>
+            <th colspan="2"><button type="submit">Войти</button></th>
+        </tr>
+        <tr>
+            <th colspan="2"><p><a href="{% url 'register' %}">Регистрация</a></p></th>
+        </tr>
+    </table>
+
 </form>
 
-<p><a href="{% url 'register' %}">Зарегистрироваться</a></p>
+
 
 </body>

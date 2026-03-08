@@ -47,8 +47,12 @@ WSGI_APPLICATION = 'main.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'django_db',
+        'USER': 'django_user',
+        'PASSWORD': 'django',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
     }
 }
 
@@ -75,6 +79,6 @@ USE_TZ = True
 STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# ALLOWED_HOSTS = ['46.29.114.111']
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['46.29.114.111']
+# ALLOWED_HOSTS = []
 STATIC_ROOT = BASE_DIR / "static"
