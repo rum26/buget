@@ -79,6 +79,7 @@ USE_TZ = True
 STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+CSRF_TRUSTED_ORIGINS = ['https://bg.rum26.ru']
 ALLOWED_HOSTS = ['46.29.114.111', 'bg.rum26.ru']
 # ALLOWED_HOSTS = []
 STATIC_ROOT = BASE_DIR / "static"
