@@ -19,4 +19,6 @@ python manage.py migrate
 - v1.12 - logout
 - v1.13 - table-layout: fixed
 - v1.14 - PostgreSQL
+- v1.15 - add domain
+- 
 ---
