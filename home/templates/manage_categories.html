@@ -13,9 +13,18 @@
 
 <title>{{ request.user.username }}</title>
 
+
 </head>
 <body>
-<h1><a href="{% url 'home' %}">⇐</a> МОИ КАТЕГОРИИ</h1>
+
+<table>
+    <tr>
+        <th><a href="{% url 'home' %}">ГЛАВНАЯ</a></th>
+        <th><a href="{% url 'edit_profile' %}">ПРОФИЛЬ</a></th>
+        <th><a href="{% url 'manage_categories' %}">КАТЕГОРИИ</a></th>
+        <th><a href="{% url 'userdata' %}">ДАННЫЕ</a></th>
+    </tr>
+</table>
 
 <!-- Форма для добавления новой категории -->
 <form method="post">

@@ -13,7 +13,14 @@
 </head>
 <body>
 
-<h1><a href="{% url 'home' %}">⇐</a> ПРОФИЛЬ</h1>
+<table>
+    <tr>
+        <th><a href="{% url 'home' %}">ГЛАВНАЯ</a></th>
+        <th><a href="{% url 'edit_profile' %}">ПРОФИЛЬ</a></th>
+        <th><a href="{% url 'manage_categories' %}">КАТЕГОРИИ</a></th>
+        <th><a href="{% url 'userdata' %}">ДАННЫЕ</a></th>
+    </tr>
+</table>
 
 <form method="post">
     {% csrf_token %}

@@ -110,3 +110,7 @@ def manage_categories(request):
         'categories': categories,
         'form': form
     })
+
+
+def user_data(request):
+    return render(request, "data.html")

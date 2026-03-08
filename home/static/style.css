@@ -30,6 +30,7 @@ h1, h2, h3 {
 
 /* === Таблицы === */
 table {
+    table-layout: fixed;
     max-width: 500px;
     width: 100%;
     margin: 10px auto;
@@ -49,7 +50,6 @@ th, td {
 }
 
 td {text-align: left;}
-
 
 tr:nth-child(even) {
     background-color: #16202f;
@@ -88,6 +88,7 @@ input[type="submit"] {
     border-radius: 5px;
     cursor: pointer;
     font-size: 12px;
+    width: 100%;
     transition: background 0.2s;
 }
 
@@ -118,4 +119,3 @@ a {
     text-decoration: none;       /* убираем подчеркивание */
     transition: color 0.2s, transform 0.2s; /* плавный переход при hover */
 }
-
